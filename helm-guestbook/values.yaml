@@ -38,6 +38,13 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
+containers:
+  - name: test-notify
+    isEnvConfigMap: true
+    envConfigMap:
+      JAVA_OPTS: "-Xms1024m -Xmx2048m -XX:NewSize=256m -XX:MaxNewSize=356m -XX:PermSize=256m -XX:MaxPermSize=512m -server "
+    
+
 nodeSelector: {}
 
 tolerations: []
