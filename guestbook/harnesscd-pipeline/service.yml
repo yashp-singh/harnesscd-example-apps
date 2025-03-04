@@ -16,6 +16,8 @@ service:
                             gitFetchType: Branch
                             paths:
                                 - guestbook/guestbook-ui-deployment.yaml
+                                - guestbook/guestbook-ui-svc.yaml
+                            repoName: harnesscd-example-apps
                             branch: master
                         skipResourceVersioning: false
                         enableDeclarativeRollback: false

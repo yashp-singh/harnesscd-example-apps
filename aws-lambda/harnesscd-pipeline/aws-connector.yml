@@ -9,14 +9,14 @@ connector:
     credential:
       type: ManualConfig
       spec:
-        accessKey: <YOUR AWS ACCESS KEY>
-        secretKeyRef: aws_permanent_access_key
-      region: us-east-1
+        accessKey: AWS_ACCESS_KEY
+        secretKeyRef: awssecret
+      region: CLOUD_REGION_NAME
     awsSdkClientBackOffStrategyOverride:
       type: FixedDelayBackoffStrategy
       spec:
         fixedBackoff: 0
         retryCount: 1
     delegateSelectors:
-      - docker-delegate
+      - DELEGATE_NAME
     executeOnDelegate: true

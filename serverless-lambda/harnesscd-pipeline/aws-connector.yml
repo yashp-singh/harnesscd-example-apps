@@ -8,17 +8,17 @@ connector:
   spec:
     credential:
       crossAccountAccess:
-        crossAccountRoleArn: <Add the ARN for Your Role>
+        crossAccountRoleArn: ROLE_ARN
       type: ManualConfig
       spec:
-        accessKey: <Add the Access Key for your Region>
-        secretKeyRef: awsaccesskey
-      region: <Specifiy the Region in which you created the Users and the Roles>
+        accessKey: AWS_ACCESS_KEY
+        secretKeyRef: awssecret
+      region: CLOUD_REGION_NAME
     awsSdkClientBackOffStrategyOverride:
       type: FixedDelayBackoffStrategy
       spec:
         fixedBackoff: 1
         retryCount: 2
     delegateSelectors:
-      - docker-delegate
+      - DELEGATE_NAME
     executeOnDelegate: true
